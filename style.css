@@ -30,11 +30,6 @@ body {
   align-items: center;
 }
 
-.navbar .logo {
-  font-size: 24px;
-  font-weight: 900;
-}
-
 .navbar .nav-links {
   list-style: none;
   display: flex;
@@ -58,8 +53,9 @@ body {
 
 /* Hero Section */
 .hero {
+
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(73, 224, 230, 0.6)),
+  background: linear-gradient(to bottom, #00aeef, #48b1bf),
     url('images/data-visualization.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   display: flex;
@@ -67,6 +63,7 @@ body {
   align-items: center;
   color: white;
   text-align: center;
+  
 }
 
 .hero h1 {
@@ -81,22 +78,6 @@ body {
   margin: 20px 0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
-.hero .btn {
-  background-color: #0066ff;
-  color: white;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero .btn:hover {
-  background-color: #005bb5;
-  transform: scale(1.1);
-}
-
 
 /* About Section */
 .about {
@@ -114,14 +95,6 @@ body {
   text-align: center;
   font-size: 1.2rem;
   color: #555;
-}
-
-.about-image img {
-  display: block;
-  max-width: 100%;
-  border-radius: 50%;
-  margin: 20px auto;
-  width: 200px;
 }
 
 /* Portfolio Section */
@@ -147,43 +120,9 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-}
-
-.portfolio-item img {
-  width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.1);
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .overlay {
-  opacity: 1;
-}
-
-.overlay h3 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.overlay p {
-  font-size: 1rem;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
@@ -198,32 +137,6 @@ body {
   margin-bottom: 40px;
 }
 
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact input, .contact textarea {
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-}
-
-.contact .btn {
-  background-color: #0066ff;
-  color: white;
-  padding: 12px 24px;
-  font-weight: 600;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.contact .btn:hover {
-  background-color: #005bb5;
-}
-
 /* Footer */
 footer {
   background-color: #222;
@@ -232,12 +145,273 @@ footer {
   text-align: center;
 }
 
-.social-icons a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 20px;
+/* Logo Styling */
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: all 0.8s ease;
 }
 
-.social-icons a:hover {
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+/* Centered startup animation */
+.logo-img.start {
+  width: 10%;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5);
+  z-index: 9999;
+  background: #000;
+  padding: 20px;
+  transition: transform 1s ease;
+}
+
+/* Splash Screen */
+.splash-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.splash-logo {
+  width: 200px;
+  height: auto;
+  animation: splash-animation 1s ease-out forwards;
+  filter: blur(5px) contrast(20);
+}
+
+@keyframes splash-animation {
+  0% {
+    filter: blur(3px) contrast(20);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(0px) contrast(1);
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Navbar link hover underline */
+.navbar .nav-links a {
+  position: relative;
+}
+
+.navbar .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Portfolio Card Hover */
+.portfolio-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Contact links hover color */
+.contact a {
   color: #0066ff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact a:hover {
+  color: #0044aa;
+  text-decoration: underline;
+}
+
+/* Hero Section Text Animation */
+.hero h1 span {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.hero h1 span:hover {
+  color: #00c3ff;
+}
+
+/* Footer link hover (if any) */
+footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00c3ff;
+}
+
+/* --------------------- */
+/* ABOUT improvements   */
+/* --------------------- */
+.about .about-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about p {
+  margin-bottom: 1.2em;
+  line-height: 1.7;
+}
+
+/* Optional emphasis for keywords without changing HTML */
+/* You can wrap important words in <strong> if you like */
+
+/* --------------------- */
+/* PORTFOLIO improvements */
+/* --------------------- */
+
+/* Differentiate titles and descriptions */
+.portfolio-item p:first-child {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+/* Smooth background hover */
+.portfolio-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Make grid responsive on smaller screens */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    flex-direction: column;
+  }
+  .portfolio-item {
+    width: 100%;
+  }
+}
+
+/* --------------------- */
+/* CONTACT improvements */
+/* --------------------- */
+
+.contact p {
+  margin: 0.5em 0;
+  font-size: 1.1rem;
+}
+
+/* Add icons before each link */
+.contact p a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact p a::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 0.4em;
+}
+
+.contact p a[href^="mailto:"]::before {
+  content: "\f0e0"; /* Envelope */
+}
+
+.contact p a[href*="linkedin.com"]::before {
+  content: "\f08c"; /* LinkedIn */
+}
+
+.contact p a[href*="github.com"]::before {
+  content: "\f09b"; /* GitHub */
+}
+
+/* Subtle link hover */
+.contact p a {
+  transition: color 0.3s ease;
+}
+
+.contact p a:hover {
+  color: #0044aa;
+}
+
+/* --------------------- */
+/* Optional: Consistent spacing in footer */
+/* --------------------- */
+footer {
+  font-size: 0.95rem;
+}
+
+
+
+.portfolio {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+
+.contact {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #00aeef, rgba(0, 102, 255, 0.7)),
+              url('images/data-visualization.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+
+
+/* About Section - soft beige to white */
+.about {
+  background: linear-gradient(to bottom right, #ff9966, #b9d6f2);
+}
+
+/* Portfolio Section - soft coral to peach */
+.portfolio {
+  min-height: 100vh;
+  background: linear-gradient(to top right, #ffe0e0, #fff5e1);
+  display: flex;
+  align-items: center;
+}
+
+/* Contact Section - light teal to soft gray */
+.contact {
+  min-height: 100vh;
+  background: linear-gradient(to top, #e0f7f9, #f7f7f7);
+  display: flex;
+  align-items: center;
 }
