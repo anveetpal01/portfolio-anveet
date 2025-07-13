@@ -188,7 +188,7 @@ footer {
 .splash-logo {
   width: 200px;
   height: auto;
-  animation: splash-animation 1s ease-out forwards;
+  animation: splash-animation 2.5s ease-out forwards;
   filter: blur(5px) contrast(20);
 }
 
