@@ -373,10 +373,9 @@ footer {
 }
 
 .contact {
-  min-height: 100vh;
+ 
   background-color: #ffffff;
-  display: flex;
-  align-items: center;
+  
 }
 
 
@@ -410,8 +409,7 @@ footer {
 
 /* Contact Section - light teal to soft gray */
 .contact {
-  min-height: 100vh;
+ 
   background: linear-gradient(to top, #e0f7f9, #f7f7f7);
-  display: flex;
-  align-items: center;
+ 
 }
