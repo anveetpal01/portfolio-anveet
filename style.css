@@ -194,7 +194,7 @@ footer {
 
 @keyframes splash-animation {
   0% {
-    filter: blur(3px) contrast(20);
+    filter: blur(1.5px) contrast(20);
     transform: scale(0);
     opacity: 1;
   }
