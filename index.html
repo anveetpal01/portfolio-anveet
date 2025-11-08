@@ -1,54 +1,246 @@
 <!DOCTYPE html>
-<p>GitHub: <a href="https://github.com/anveetpal01" target="_blank">github.com/anveetpal01</a></p>
-</div>
-<form class="contact-form" action="#" onsubmit="return false;">
-<label for="name">Name</label>
-<input id="name" name="name" type="text" required />
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Anveet Pal — Data Analytics & ML portfolio. Projects: Recommender System, Power BI Dashboards, XGBoost API, .NET REST APIs." />
+  <title>Anveet Pal | Data Analytics Portfolio</title>
 
-<label for="email">Email</label>
-<input id="email" name="email" type="email" required />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
+<body>
 
-<label for="message">Message</label>
-<textarea id="message" name="message" rows="4" required></textarea>
+  <!-- Splash Screen -->
+  <div class="splash-container" id="splash">
+    <img src="images/logo.svg" alt="Logo" class="splash-logo" />
+  </div>
 
+  <!-- Main Content -->
+  <div id="main-content" class="hidden">
 
-<button class="btn-primary" type="submit">Send Message</button>
-</form>
-</div>
-</section>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="logo-link">
+          <img src="images/logo.svg" alt="Logo" class="logo-img" />
+        </a>
 
+        <button class="nav-toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
 
-<footer>
-<div class="footer-content container">
-<p>&copy; 2025 Anveet Pal · <a href="#">Privacy</a></p>
-</div>
-</footer>
+        <ul class="nav-links" id="primary-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
+        <a href="resume.pdf" download class="cta">Download Resume</a>
+      </div>
+    </nav>
 
-</div>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+      <div class="container hero-content">
+        <h1>Hi, I'm <span>Anveet Pal</span></h1>
+        <p class="tagline">Computer Science Engineer</p>
 
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-primary">View My Work</a>
+          <a href="mailto:anveetpal12@gmail.com" class="btn-secondary">Hire Me</a>
+        </div>
+      </div>
+    </header>
 
-<!-- Modal for project preview -->
-<div id="modal" class="modal" aria-hidden="true">
-<div class="modal-dialog" role="dialog" aria-modal="true">
-<button class="modal-close" aria-label="Close preview">&times;</button>
-<div class="modal-content">
-<img src="" alt="project preview" id="modal-img" loading="lazy">
-<h3 id="modal-title"></h3>
-<p id="modal-desc"></p>
-<div class="modal-actions">
-<a href="#" id="modal-code" class="link-code">View Code</a>
-<a href="#" id="modal-live" class="btn-light">Live Demo</a>
-</div>
-</div>
-</div>
-</div>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            🚀 Passionate Computer Science Graduate driven by curiosity and innovation — blending skills in Python, SQL, Power BI, and machine learning to transform data into meaningful insights. Eager to tackle real-world challenges, grow through hands-on projects, and contribute to impactful tech solutions.
+          </p>
 
+          <ul class="skills">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Flask / FastAPI</li>
+            <li>Streamlit</li>
+            <li>Power BI</li>
+            <li>Git</li>
+          </ul>
 
-<script src="script.js" defer></script>
+          <p class="contact-mini">
+            <a href="mailto:anveetpal12@gmail.com">anveetpal12@gmail.com</a> ·
+            <a href="https://linkedin.com/in/anveet-pal" target="_blank">LinkedIn</a> ·
+            <a href="https://github.com/anveetpal01" target="_blank">GitHub</a>
+          </p>
+        </div>
+
+        <div class="about-card">
+          <img src="images/profile.jpg" alt="Anveet Pal" />
+          <div class="card-body">
+            <h3>Current</h3>
+            <p>Python-ML Developer Intern at Alveofit — built XGBoost models for asthma prediction and deployed APIs.</p>
+            <a href="resume.pdf" download class="btn-light">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="portfolio-grid">
+
+          <article class="portfolio-item" data-title="Multi-domain Recommender System"
+            data-desc="Streamlit app recommending Songs, Movies, Books, Courses, and Colleges using RL & collaborative filtering."
+            data-img="images/recommender-thumb.jpg">
+            <img src="images/recommender-thumb.jpg" alt="Recommender System">
+            <div class="portfolio-body">
+              <h3>Recommender System</h3>
+              <p>Python + Streamlit app recommending Songs, Movies, Books, Courses, and Colleges using Reinforcement
+                Learning.</p>
+              <div class="portfolio-links">
+                <a href="https://github.com/anveetpal01/multi-domain-recommender-system" target="_blank"
+                  class="link-code">Code</a>
+                <button class="btn-light preview-btn">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- <article class="portfolio-item" data-title="Power BI Dashboards"
+            data-desc="Interactive Power BI dashboards to visualize KPIs and trends." data-img="images/powerbi-thumb.jpg">
+            <img src="images/powerbi-thumb.jpg" alt="Power BI Dashboard">
+            <div class="portfolio-body">
+              <h3>Power BI Dashboard</h3>
+              <p>Interactive dashboards to visualize key metrics and trends for real-world datasets.</p>
+              <div class="portfolio-links">
+                <a href="https://github.com/anveetpal01/Power-BI-" class="link-code">Link</a>
+                <button class="btn-light preview-btn">Preview</button>
+              </div>
+            </div>
+          </article> -->
+
+          <article class="portfolio-item" data-title="Power BI Dashboards"
+          data-desc="Interactive Power BI dashboards to visualize KPIs and trends."
+          data-img="images/api-thumb.jpg">
+          <img src="images/api-thumb.jpg" alt="PowerBI Dashboard">
+          <div class="portfolio-body">
+            <h3>Flask-based API</h3>
+            <p>Interactive dashboards to visualize key metrics and trends for real-world datasets.</p>
+            <div class="portfolio-links">
+              <a href="https://github.com/anveetpal01/Power-BI-" target="_blank"
+                class="link-code">Link</a>
+              <button class="btn-light preview-btn">Preview</button>
+            </div>
+          </div>
+        </article>
+
+          <article class="portfolio-item" data-title="Asthma Prediction API"
+            data-desc="Flask API using XGBoost to predict asthma severity and recommend treatments."
+            data-img="images/api-thumb.jpg">
+            <img src="images/api-thumb.jpg" alt="API Project">
+            <div class="portfolio-body">
+              <h3>Flask-based API</h3>
+              <p>Built a Flask API to predict asthma severity using XGBoost and served personalized treatment
+                recommendations.</p>
+              <div class="portfolio-links">
+                <a href="https://github.com/anveetpal01/myProjects/tree/main/xgboost_treat_api" target="_blank"
+                  class="link-code">Code</a>
+                <button class="btn-light preview-btn">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-title="Only Members Reward System"
+            data-desc=".NET 8 RESTful API managing members, reward points, and coupons." data-img="images/dotnet-thumb.jpg">
+            <img src="images/dotnet-thumb.jpg" alt=".NET Reward System">
+            <div class="portfolio-body">
+              <h3>Only Members Reward System</h3>
+              <p>RESTful API built with .NET 8 and MySQL to manage members, their reward points, and coupon redemptions.
+              </p>
+              <div class="portfolio-links">
+                <a href="https://github.com/anveetpal01/HoshoOnlyMembers" target="_blank" class="link-code">Code</a>
+                <button class="btn-light preview-btn">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-title="Learning Logs"
+          data-desc="Users track topics they are learning about.
+          They create and edit journal entries for each topic.
+          The app supports registration, login, and personalized learning logs.
+          Project link - https://django-learninglog-1.onrender.com/" data-img="images/dotnet-thumb.jpg">
+          <img src="images/dotnet-thumb.jpg" alt="Django web app">
+          <div class="portfolio-body">
+            <h3>Learning Logs</h3>
+            <p>Python-Django web app.
+            </p>
+            <div class="portfolio-links">
+              <a href="https://github.com/anveetpal01/Django_LearningLog" target="_blank" class="link-code">Code</a>
+              <button class="btn-light preview-btn">Preview</button>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact Me</h2>
+          <p>Email: <a href="mailto:anveetpal12@gmail.com">anveetpal12@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/anveet-pal" target="_blank">linkedin.com/in/anveet-pal</a></p>
+          <p>GitHub: <a href="https://github.com/anveetpal01" target="_blank">github.com/anveetpal01</a></p>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content container">
+        <p>&copy; 2025 Anveet Pal</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal for previews -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close">&times;</button>
+      <div class="modal-content">
+        <img id="modal-img" alt="project preview">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div class="modal-actions">
+          <a id="modal-code" href="#" class="link-code">View Code</a>
+          <a id="modal-live" href="#" class="btn-light">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
-
 
 </html>
