@@ -1,415 +1,479 @@
-/* Reset */
+:root {
+  --bg: #f8f8f8;
+  --muted: #6b7280;
+  --accent: #0066ff;
+  --accent-2: #00aeef;
+  --card: #ffffff;
+  --radius: 14px;
+  --container-width: 1100px;
+}
+
+/* ======================== */
+/* RESET + GLOBAL STYLES    */
+/* ======================== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 1.6;
-  font-size: 16px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: #111;
+  line-height: 1.5;
 }
 
-/* Navigation */
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================== */
+/* NAVBAR                   */
+/* ======================== */
 .navbar {
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
-  padding: 20px;
+  padding: 14px 0;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 10;
+  z-index: 40;
+  backdrop-filter: blur(4px);
 }
 
-.navbar .container {
+.nav-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar .nav-links li {
-  font-size: 18px;
-}
-
-.navbar .nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-  color: #0066ff;
-}
-
-/* Hero Section */
-.hero {
-
-  height: 100vh;
-  background: linear-gradient(to bottom, #00aeef, #48b1bf),
-    url('images/data-visualization.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  
-}
-
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin: 20px 0;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-/* About Section */
-.about {
-  padding: 100px 20px;
-  background-color: #fff;
-}
-
-.about h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.about p {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* Portfolio Section */
-.portfolio {
-  padding: 100px 20px;
-  background: #f5f5f5;
-}
-
-.portfolio h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-.portfolio-grid {
-  display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
 }
 
-.portfolio-item {
-  width: 30%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Section */
-.contact {
-  padding: 100px 20px;
-  background-color: #fff;
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-/* Logo Styling */
 .logo-img {
   height: 40px;
-  width: auto;
-  transition: all 0.8s ease;
 }
 
-.logo-link {
+.nav-links {
+  list-style: none;
   display: flex;
+  gap: 18px;
   align-items: center;
 }
 
-/* Centered startup animation */
-.logo-img.start {
-  width: 10%;
-  height: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(5);
-  z-index: 9999;
-  background: #000;
-  padding: 20px;
-  transition: transform 1s ease;
-}
-
-/* Splash Screen */
-.splash-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.splash-logo {
-  width: 200px;
-  height: auto;
-  animation: splash-animation 2.5s ease-out forwards;
-  filter: blur(5px) contrast(20);
-}
-
-@keyframes splash-animation {
-  0% {
-    filter: blur(0.5px) contrast(20);
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    filter: blur(0px) contrast(1);
-    transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-/* Navbar link hover underline */
-.navbar .nav-links a {
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
   position: relative;
 }
 
-.navbar .nav-links a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -4px;
+  left: 0;
   width: 100%;
   height: 2px;
-  background-color: #0066ff;
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
 }
 
-.navbar .nav-links a:hover::after {
+.nav-links a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-/* Portfolio Card Hover */
-.portfolio-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 22px;
   cursor: pointer;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Contact links hover color */
-.contact a {
-  color: #0066ff;
+.cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-.contact a:hover {
-  color: #0044aa;
-  text-decoration: underline;
+.cta:hover {
+  background: #0044aa;
 }
 
-/* Hero Section Text Animation */
-.hero h1 span {
+/* ======================== */
+/* HERO SECTION             */
+/* ======================== */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 0;
+  color: white;
+  background: linear-gradient(180deg, var(--accent-2), rgba(0, 102, 255, 0.7)),
+    url("images/data-visualization.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero span {
+  color: #fff;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-light {
   display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.hero h1 span:hover {
-  color: #00c3ff;
-}
-
-/* Footer link hover (if any) */
-footer a {
-  color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 12px 18px;
+  transition: all 0.3s ease;
 }
 
-footer a:hover {
-  color: #00c3ff;
+.btn-primary {
+  background: #001f7a;
+  color: #fff;
 }
 
-/* --------------------- */
-/* ABOUT improvements   */
-/* --------------------- */
-.about .about-text {
-  max-width: 800px;
-  margin: 0 auto;
+.btn-primary:hover {
+  background: #002fa5;
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-light {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btn-light:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ======================== */
+/* ABOUT SECTION            */
+/* ======================== */
+.about {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffefea, #f3f9ff);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 30px;
+  align-items: start;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .about p {
+  color: var(--muted);
+  font-size: 1.05rem;
   margin-bottom: 1.2em;
-  line-height: 1.7;
 }
 
-/* Optional emphasis for keywords without changing HTML */
-/* You can wrap important words in <strong> if you like */
-
-/* --------------------- */
-/* PORTFOLIO improvements */
-/* --------------------- */
-
-/* Differentiate titles and descriptions */
-.portfolio-item p:first-child {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 0.5em;
-}
-
-/* Smooth background hover */
-.portfolio-item:hover {
-  background-color: #f0f0f0;
-}
-
-/* Make grid responsive on smaller screens */
-@media (max-width: 768px) {
-  .portfolio-grid {
-    flex-direction: column;
-  }
-  .portfolio-item {
-    width: 100%;
-  }
-}
-
-/* --------------------- */
-/* CONTACT improvements */
-/* --------------------- */
-
-.contact p {
-  margin: 0.5em 0;
-  font-size: 1.1rem;
-}
-
-/* Add icons before each link */
-.contact p a {
-  display: inline-flex;
-  align-items: center;
-}
-
-.contact p a::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 0.4em;
-}
-
-.contact p a[href^="mailto:"]::before {
-  content: "\f0e0"; /* Envelope */
-}
-
-.contact p a[href*="linkedin.com"]::before {
-  content: "\f08c"; /* LinkedIn */
-}
-
-.contact p a[href*="github.com"]::before {
-  content: "\f09b"; /* GitHub */
-}
-
-/* Subtle link hover */
-.contact p a {
-  transition: color 0.3s ease;
-}
-
-.contact p a:hover {
-  color: #0044aa;
-}
-
-/* --------------------- */
-/* Optional: Consistent spacing in footer */
-/* --------------------- */
-footer {
-  font-size: 0.95rem;
-}
-
-
-
-.portfolio {
-  min-height: 100vh;
-  background-color: #f5f5f5;
+.skills {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
 }
 
-.contact {
- 
-  background-color: #ffffff;
-  
+.skills li {
+  background: var(--card);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-
-/* Hero Section */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #00aeef, rgba(0, 102, 255, 0.7)),
-              url('images/data-visualization.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+.about-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(14, 23, 41, 0.08);
   text-align: center;
 }
 
-
-
-/* About Section - soft beige to white */
-.about {
-  background: linear-gradient(to bottom right, #ff9966, #b9d6f2);
+.about-card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* Portfolio Section - soft coral to peach */
+/* ======================== */
+/* PORTFOLIO SECTION        */
+/* ======================== */
 .portfolio {
-  min-height: 100vh;
-  background: linear-gradient(to top right, #ffe0e0, #fff5e1);
+  padding: 100px 0;
+  background: linear-gradient(135deg, #fff8f8, #fffaf0);
+}
+
+.portfolio h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio-item {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.portfolio-body {
+  padding: 16px;
+}
+
+.portfolio-body h3 {
+  margin-bottom: 10px;
+}
+
+.portfolio-body p {
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.portfolio-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Hover animation */
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(10, 20, 40, 0.12);
+}
+
+/* ======================== */
+/* CONTACT SECTION          */
+/* ======================== */
+.contact {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #eaf8fb, #f7f7f7);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+
+/* ======================== */
+/* FOOTER                   */
+/* ======================== */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ======================== */
+/* MODAL PREVIEW WINDOW     */
+/* ======================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Contact Section - light teal to soft gray */
-.contact {
- 
-  background: linear-gradient(to top, #e0f7f9, #f7f7f7);
- 
+.modal[aria-hidden="false"] {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.6);
+  max-width: 900px;
+  width: 100%;
+}
+
+.modal-content {
+  padding: 18px;
+}
+
+.modal img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background: transparent;
+  border: 0;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ======================== */
+/* SPLASH ANIMATION         */
+/* ======================== */
+.splash-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  z-index: 9999;
+}
+
+.splash-logo {
+  width: 160px;
+  height: auto;
+  animation: splash-animation 1.2s ease forwards;
+  filter: blur(3px) contrast(20);
+}
+
+@keyframes splash-animation {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+    filter: blur(6px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS   */
+/* ======================== */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 120px;
+  }
 }
